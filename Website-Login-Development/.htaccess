@@ -1,0 +1,33 @@
+# Cache Busting Headers
+<IfModule mod_headers.c>
+  # Disable caching for HTML, CSS, and JS files
+  <FilesMatch "\.(html|css|js)$">
+    Header set Cache-Control "no-store, no-cache, must-revalidate, max-age=0"
+    Header set Pragma "no-cache"
+    Header set Expires 0
+  </FilesMatch>
+
+  # Enable long-term caching for static assets (images, fonts, etc.)
+  <FilesMatch "\.(jpg|jpeg|png|gif|svg|ico|webp|woff|woff2|eot|ttf)$">
+    Header set Cache-Control "max-age=31536000, public"
+  </FilesMatch>
+</IfModule>
+
+# Always serve the correct hashed index.html
+DirectoryIndex index.67a7dfd5.html
+
+# Prevent Directory Listing
+Options -Indexes
+
+# Redirect non-www to www and force HTTPS
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+
+  # Redirect HTTP to HTTPS
+  RewriteCond %{HTTPS} !=on
+  RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+  # Redirect non-www to www
+  RewriteCond %{HTTP_HOST} !^www\. [NC]
+  RewriteRule ^ https://www.%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+</IfModule>

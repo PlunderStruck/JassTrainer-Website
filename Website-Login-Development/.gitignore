@@ -1,0 +1,38 @@
+# Node.js dependencies
+node_modules/
+
+# Build output
+dist/
+rev-manifest.json
+rev-media-manifest.json
+
+# Logs and temporary files
+npm-debug.log*
+yarn-debug.log*
+*.log
+
+# IDE and editor settings
+.vscode/
+.idea/
+*.sublime-*
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Gulp temporary or cache files
+.gulp/
+*.tmp
+
+# ZIP or archive files
+*.zip
+
+# Imported files (specific to your project)
+*.import
+
+# Temporary structure files
+project-structure.txt
+
+# Environment or sensitive files
+.env

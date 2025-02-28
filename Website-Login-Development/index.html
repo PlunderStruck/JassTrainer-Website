@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>JASSTrainer</title>
+  <link rel="canonical" href="https://www.jasstrainer.xyz/">
+  <link rel="icon" type="image/png" href="./assets/icon-frames/frame-1.png" />
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+
+<body>
+  <div class="header-container">
+    <header>
+      <h1>Juke and Skill Shot Trainer</h1>
+      <button class="hamburger">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </button>
+    </header>
+    <nav>
+      <ul>
+        <li><a id="trainer" href="index.html">Trainer</a></li>
+        <li><a href="./pages/leaderboard.html">Online Leaderboard</a></li>
+        <li><a id="login" href="./pages/login.html">Login</a></li>
+      </ul>
+    </nav>
+  </div>
+
+  <div class="container">
+    <div class="iframe-container">
+      <video class="background-video" autoplay muted loop playsinline>
+        <source src="./assets/jasstrainer-vid-short.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+      <iframe loading="lazy" src="./gamefiles/jasstrainer.html" frameBorder="0" scrolling="no">
+      </iframe>
+      <button class="button-style" id="play-game">Mobile Version Coming Soon!</button>
+    </div>
+    <div class="buttons">
+      <button class="button-style" id="howToPlayBtn">How to Play</button>
+      <button class="button-style" id="fullscreen" onclick="goFullscreen()">Fullscreen</button>
+    </div>
+  </div>
+
+  <div id="howToPlayModal" class="modal">
+    <div class="modal-content">
+      <span class="close-button">&times;</span>
+      <h2>How to Play</h2>
+      <ul>
+        <li>Press <kbd>Q</kbd>, <kbd>W</kbd>, or <kbd>E</kbd> to charge and shoot an energy sphere at
+          the robots to score.
+        </li>
+        <li>Right-clicking on the screen moves the character. Dodge the projectiles and explosions
+          to survive.</li>
+      </ul>
+    </div>
+  </div>
+
+  <script src="./script.js"></script>
+</body>
+
+</html>
